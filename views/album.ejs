@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+
+<%- include('./partials/head'); %>
+
+<body>
+    <%- include('./partials/navbar'); %>
+
+    <div class="my-container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <% if (images) { %>
+                    <% images.forEach(function(image){ %>
+                    <div class="img-view col-3" id="<%- image.imgId %>">
+                        <img src="<%- image.img %>" alt="<%- image.imgId %>" />
+                        <input type="button" value="Photo_<%- image.imgId %>">
+                    </div>
+                    <% }); %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-4">
+                <a href="/order" class="btn btn-primary disabled" id="order_link">Order</a>
+                <div class="basket">
+                    <table id="album">
+                        <thead>
+                            <tr>
+                                <td>Name photo</td>
+                                <td>Photo type</td>
+                                <td>Photo size</td>
+                                <td>Delete</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    </table>
+                </div>
+                <template id="photorow">
+                    <tr>
+                        <td></td>
+                        <td><select name="photostyle">
+                                <option value="Gloss">Gloss</option>
+                                <option value="Matte">Matte</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="photosize">
+                                <option value="40X60">40X60</option>
+                                <option value="60X80">60X80</option>
+                                <option value="80X100">80X100</option>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                </template>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>

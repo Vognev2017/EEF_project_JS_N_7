@@ -1,0 +1,67 @@
+body {
+    background-color: beige;
+}
+
+.my-container {
+    width: 1200px;
+    height: auto;
+    text-align: center;
+
+    .img-view {
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    img {
+        width: 600px;
+        height: 500px;
+    }
+}
+
+.col-4 a {
+    margin-left: -80%;
+}
+
+a.disabled {
+    pointer-events: none;
+}
+
+table tr td {
+    border: 1px black solid;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+#preloader.hide-preloader {
+    animation: hidePreloader 1s;
+}
+
+#preloader.preloader-hidden {
+    display: none;
+}
+
+@keyframes hidePreloader {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.list-user-title {
+    margin-left: -55%;
+}

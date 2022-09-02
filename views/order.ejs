@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+
+<%- include('./partials/head'); %>
+
+<body>
+    <%- include('./partials/navbar'); %>
+    <div class="my-container">
+        <h1>This is your order</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h6>Please input:</h6>
+                    <input type="text" name="name" placeholder="Your name"><br />
+                    <input type="text" name="phone" placeholder="Your phone"><br />
+                    <a href="/pay" class="btn btn-primary disabled" id='pay'>Pay</a>
+                </div>
+                <div class="col-6">
+                    <div class="table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>

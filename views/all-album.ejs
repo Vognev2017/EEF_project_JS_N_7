@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+
+<%- include('./partials/head'); %>
+
+<body>
+    <%- include('./partials/navbar'); %>
+
+    <div class="my-container">
+        <div class="row">
+            <div class="col-4">
+                <% if (links) { %>
+                <% links.forEach(function(link){ %>
+                <a href=<%= link.link %>>
+                    <%= link.name %>
+                </a>
+                <br />
+                <% }); %>
+                <% } %>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <% if (images) { %>
+                    <% images.forEach(function(image){ %>
+                    <div class="img-view col-3" id="<%- image.imgId %>">
+                        <img src="<%- image.img %>" alt="<%- image.imgId %>" />
+                    </div>
+                    <% }); %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/head'); %>
+
+
+<body>
+    <%- include('./partials/navbar'); %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <% if (titles) { %>
+                <h5>Your album names </h5>
+                <select id="category">
+                    <option value="">Albums</option>
+                    <% titles.forEach(function(title){ %>
+                    <option value=<%= title %>>
+                        <%= title %>
+                    </option>
+                    <% }); %>
+                </select>
+                <% } %>
+            </div>
+            <div class="col-9">
+                <h5>You can select only image files: *.jpeg *.png *.jpg
+                    and you can't upload more five file.
+                </h5>
+                <div class="result"></div>
+                <form id="uploads" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value=<%= id %>>
+                    <input type="text" name="title" placeholder="Album name">
+                    <div><input type="file" name="myImage" multiple="multiple" /></div>
+                    <div><input type="submit" value="Upload selected" disabled /></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>

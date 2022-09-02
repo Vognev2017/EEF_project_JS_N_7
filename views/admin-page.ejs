@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./partials/head'); %>
+
+<body>
+    <%- include('./partials/navbar'); %>
+    <div class="my-container">
+        <div class="container">
+
+            <% if (users) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user){ %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td> <%= user.phone %></td>
+                        <td> <%= user.age %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <% } %>
+        </div>
+    </div>
+    <%- include('./partials/footer'); %>
+</body>
+
+</html>
